@@ -30,13 +30,15 @@ if imag_url is not None:
     img = main(weightpath, imag_url)
 
     print('uploaded files-------------------', img)
-    for i in os.listdir(img):
-        if i.endswith('.mp4'):
-            video = open(str(img)+'/'+i, 'rb')
-            st.video(video)
-        else:
-            image = Image.open(str(img)+'/'+i)
-            st.image(image)
+    i = os.listdir(img)[-1]
+
+    #for i in os.listdir(img):
+    if i.endswith('.mp4'):
+        video = open(str(img)+'/'+i, 'rb')
+        st.video(video)
+    else:
+        image = Image.open(str(img)+'/'+i)
+        st.image(image)
 
 
 
