@@ -6,7 +6,7 @@ from inference import main
 
 
 weightpath = 'deploy/best.pt'
-source = r'test/dji_export_1655128318296.jpg'
+source = r'test/dji_export_1655128326394.jpg'
 ##########
 ##### Set up sidebar.
 ##########
