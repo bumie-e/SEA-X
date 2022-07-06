@@ -10,7 +10,8 @@ A platform that combines Drones and GIS technology, leveraging AI to identify an
 
 ### How does it work?
 
-![Solution](https://stdntpartners-my.sharepoint.com/:i:/g/personal/bunmi_akinremi_studentambassadors_com/ES3QaYJt7YJFo4zs-0mMgDwBn-Ol-3VurZzFiEAGNJpjQw?e=DxTCgd)
+https://user-images.githubusercontent.com/54020973/177602282-13057edf-2b06-420c-b135-9e8589390aa0.mp4
+
 
 ### Website to test the app
 
