@@ -1,4 +1,4 @@
-# SEA-X
+# SEA-X - Detection and Analysis of Plastic Waste
 
 ### What we aim to do
 
@@ -11,5 +11,10 @@ A platform that combines Drones and GIS technology, leveraging AI to identify an
 ### How does it work?
 
 ![Solution](https://stdntpartners-my.sharepoint.com/:i:/g/personal/bunmi_akinremi_studentambassadors_com/ES3QaYJt7YJFo4zs-0mMgDwBn-Ol-3VurZzFiEAGNJpjQw?e=DxTCgd)
+
+### Website to test the app
+
+It was built with power apps and deployed with Streamlit
+https://seax.powerappsportals.com/
 
 
