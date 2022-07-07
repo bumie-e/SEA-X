@@ -31,7 +31,17 @@ LabelImg was used to annotate the images
 
 ### AIM of research poster
 
-To compare the results from a Yolov5 and Effi-UNet model by applying both to detection and analysis of plastic waste.
+To propose an efficient way to detect and analyse different plastic types
+
+***compare the results from a Yolov5 and Effi-UNet model by applying both to detection and analysis of plastic waste.
+
+The paper is divided into two parts
+- Detection part
+- Analysis part
+
+### Paper Improvements
+
+
 
 #### Benchmark results: 
 Will be added soon
@@ -42,7 +52,7 @@ Will be updated soon
 
 ### UNet Approach
 
-Tried to acheive the same results from Yolov5 by leveraging a UNet CNN architecture. This research uses the same dataset, preprocessing method but with a UNet model and a extra layer. The results are a displayed differently in that using semantic segmentation to show the mapped areas and a collective accuracy rather than individual predictions.
+To acheive the same results from Yolov5 by leveraging a UNet CNN architecture. This research uses the same dataset, preprocessing method but with a UNet model and a extra layer. The results are a displayed differently in that using semantic segmentation to show the mapped areas and a collective accuracy rather than individual predictions.
 
 This is an improvement of a similar poster I presented at Data Scientist Bootcamp 2021 using a different model approach, Efficent Unet. Here's the poster of the previous one.
 
