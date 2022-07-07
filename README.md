@@ -25,6 +25,10 @@ https://seax.powerappsportals.com/
 
 Tried to acheive the same results from Yolov5 by leveraging a UNet CNN architecture. This research uses the same dataset, preprocessing method but with a UNet model and a extra layer. The results are a displayed differently in that using semantic segmentation to show the mapped areas and a collective accuracy rather than individual predictions.
 
-A similar poster was presented at Data Scientist Bootcamp 2019, but this one has been improved using a different approach. Here's the poster of the previous one.
+A similar poster was presented at Data Scientist Bootcamp 2019, but this one has been improved using a different approach, Efficent Unet. Here's the poster of the previous one.
 
 ![Screenshot 2022-07-07 121514](https://user-images.githubusercontent.com/54020973/177760978-fb89f73f-a15f-4e67-997b-d7450ddc8408.png)
+
+Refernce:
+
+https://openaccess.thecvf.com/content_CVPRW_2020/papers/w22/Baheti_Eff-UNet_A_Novel_Architecture_for_Semantic_Segmentation_in_Unstructured_Environment_CVPRW_2020_paper.pdf
