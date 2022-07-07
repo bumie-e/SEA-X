@@ -12,6 +12,7 @@ A platform that combines Drones, AI and GIS technology, to identify and analyze 
 ### How does it work?
 
 Leveraging a cutomoised Yolov5 model to predict plastics found on the water surface
+
 https://user-images.githubusercontent.com/54020973/177602282-13057edf-2b06-420c-b135-9e8589390aa0.mp4
 
 ### Website to test the app
