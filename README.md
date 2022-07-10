@@ -61,5 +61,5 @@ This is an improvement of a similar poster I presented at Data Scientist Bootcam
 
 Refernce:
 https://github.com/ultralytics/yolov5/blob/master/detect.py
-
+https://binginagesh.medium.com/small-object-detection-an-image-tiling-based-approach-bce572d890ca#03ca
 https://openaccess.thecvf.com/content_CVPRW_2020/papers/w22/Baheti_Eff-UNet_A_Novel_Architecture_for_Semantic_Segmentation_in_Unstructured_Environment_CVPRW_2020_paper.pdf
