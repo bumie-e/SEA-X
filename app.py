@@ -10,9 +10,9 @@ import matplotlib.pyplot as plt
 
 weightpath = r'deploy/best.pt'
 source = r'test/60.jpg'
-source1 = r'test/57.jpg'
-source2 = r'test/54.jpg'
-source3 = r'test/50.jpg'
+source1 = r'test/219.jpg'
+source2 = r'test/221.jpg'
+source3 = r'test/220.jpg'
 
 ##########
 ##### Set up sidebar.

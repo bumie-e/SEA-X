@@ -48,7 +48,7 @@ from utils.torch_utils import select_device, time_sync
 
 @torch.no_grad()
 def loadmodel(
-        weights=ROOT / 'best.pt',  # model.pt path(s)
+        weights=ROOT / 'deploy/best.pt',  # model.pt path(s)
 ):
     data=ROOT / 'data/coco128.yaml'  # dataset.yaml path
     device=''  # cuda device, i.e. 0 or 0,1,2,3 or cpu
