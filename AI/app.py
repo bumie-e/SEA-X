@@ -8,11 +8,11 @@ from inference import main
 import matplotlib.pyplot as plt
 
 
-weightpath = r'deploy/best.pt'
-source = r'test/60.jpg'
-source1 = r'test/219.jpg'
-source2 = r'test/221.jpg'
-source3 = r'test/220.jpg'
+weightpath = r'AI/deploy/best.pt'
+source = r'AI/test/60.jpg'
+source1 = r'AI/test/219.jpg'
+source2 = r'AI/test/221.jpg'
+source3 = r'AI/test/220.jpg'
 
 ##########
 ##### Set up sidebar.
