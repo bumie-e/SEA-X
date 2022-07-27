@@ -47,12 +47,27 @@ from utils.torch_utils import select_device, time_sync
 
 
 @torch.no_grad()
-def run(
-        weights=ROOT / 'yolov5s.pt',  # model.pt path(s)
-        source=ROOT / 'data/images',  # file/dir/URL/glob, 0 for webcam
-        
-        
+def loadmodel(
+        weights=ROOT / 'best.pt',  # model.pt path(s)
 ):
+    data=ROOT / 'data/coco128.yaml'  # dataset.yaml path
+    device=''  # cuda device, i.e. 0 or 0,1,2,3 or cpu
+    half=False  # use FP16 half-precision inference
+    dnn=False  # use OpenCV DNN for ONNX inference
+
+    # Load model
+    device = select_device(device)
+    model = DetectMultiBackend(weights, device=device, dnn=dnn, data=data, fp16=half)
+    stride, names, pt = model.stride, model.names, model.pt
+    
+    return model, stride, names, pt
+
+
+
+def run(model, stride, names, pt, weights=ROOT / 'yolov5s.pt',  # model.pt path(s)
+        source=ROOT / 'data/images', # file/dir/URL/glob, 0 for webcam
+        ):
+
     data=ROOT / 'data/coco128.yaml'  # dataset.yaml path
     imgsz=(640, 640)  # inference size (height, width)
     conf_thres=0.25  # confidence threshold
@@ -78,6 +93,15 @@ def run(
     half=False  # use FP16 half-precision inference
     dnn=False  # use OpenCV DNN for ONNX inference
 
+    objects_ = []
+    accuracies = []
+    device = select_device(device)
+    imgsz = check_img_size(imgsz, s=stride)  # check image size
+
+    # Directories
+    save_dir = increment_path(Path(project) / name, exist_ok=exist_ok)  # increment run
+    (save_dir / 'labels' if save_txt else save_dir).mkdir(parents=True, exist_ok=True)  # make dir
+
     source = str(source)
     save_img = not nosave and not source.endswith('.txt')  # save inference images
     is_file = Path(source).suffix[1:] in (IMG_FORMATS + VID_FORMATS)
@@ -85,16 +109,6 @@ def run(
     webcam = source.isnumeric() or source.endswith('.txt') or (is_url and not is_file)
     if is_url and is_file:
         source = check_file(source)  # download
-
-    # Directories
-    save_dir = increment_path(Path(project) / name, exist_ok=exist_ok)  # increment run
-    (save_dir / 'labels' if save_txt else save_dir).mkdir(parents=True, exist_ok=True)  # make dir
-
-    # Load model
-    device = select_device(device)
-    model = DetectMultiBackend(weights, device=device, dnn=dnn, data=data, fp16=half)
-    stride, names, pt = model.stride, model.names, model.pt
-    imgsz = check_img_size(imgsz, s=stride)  # check image size
 
     # Dataloader
     if webcam:
@@ -169,6 +183,8 @@ def run(
                     if save_img or save_crop or view_img:  # Add bbox to image
                         c = int(cls)  # integer class
                         label = None if hide_labels else (names[c] if hide_conf else f'{names[c]} {conf:.2f}')
+                        objects_.append(names[c])
+                        accuracies.append(float(f'{conf:.2f}'))
                         annotator.box_label(xyxy, label, color=colors(c, True))
                     if save_crop:
                         save_one_box(xyxy, imc, file=save_dir / 'crops' / names[c] / f'{p.stem}.jpg', BGR=True)
@@ -209,7 +225,7 @@ def run(
         LOGGER.info(f"Results saved to {colorstr('bold', save_dir)}{s}")
     if update:
         strip_optimizer(weights)  # update model (to fix SourceChangeWarning)
-    return save_dir
+    return save_dir, t, objects_, accuracies 
     
 
 
@@ -218,5 +234,6 @@ def run(
 
 def main(weightpath, source):
     check_requirements(exclude=('tensorboard', 'thop'))
-    p_dir = run(weightpath, source)
-    return p_dir
+    model, stride, names, pt = loadmodel()
+    p_dir, time, objects_, accuracies = run(model, stride, names, pt, weightpath, source)
+    return p_dir, time, objects_, accuracies 
