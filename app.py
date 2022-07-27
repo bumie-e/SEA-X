@@ -91,7 +91,7 @@ if imag_url is not None:
     print('uploaded files-------------------', img)
 
     with c1:
-        img_data = imag_url.split('\\')
+        img_data = imag_url.split('/')
         print(img_data)
         image = Image.open(str(img)+'/'+img_data[-1])
         st.image(image)
