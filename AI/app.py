@@ -175,7 +175,7 @@ else:
 
         print('uploaded files-------------------', img)
 
-        img_data = imag_url.split('\\')
+        img_data = imag_url.split('/')
         print(img_data)
         image = Image.open(str(img)+'/'+img_data[-1])
         st.image(image)
@@ -203,7 +203,7 @@ if vid_url is not None:
     st.write('Time taken: ', f'{round(time[1]/60,2)} secs')
     print('uploaded files-------------------', vid)
 
-    img_data = vid_url.split('\\')
+    img_data = vid_url.split('/')
     print(img_data, vid)
 
     video_file = open(str(vid)+'/'+img_data[-1], 'rb')
@@ -226,7 +226,7 @@ else:
         st.write('Time taken: ', f'{round(time[1]/60,2)} secs')
         print('uploaded files-------------------', vid)
 
-        img_data = vid_url.split('\\')
+        img_data = vid_url.split('/')
         print(img_data)
 
         video_file = open(str(vid)+'/'+img_data[-1], 'rb')
