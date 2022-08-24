@@ -84,7 +84,7 @@ with st.sidebar:
         else: vid_url=None
     elif b == 'Sample Video 2':
         if st.button('Ok', key=2):
-            vid_url = st.text_input('Add the File directory', vidsource1, key=2)
+            vid_url = st.text_input('Add the File directory', vidsource1, key=100)
         else: vid_url=None
     elif b == 'Sample Video 3':
         if st.button('Ok', key=3):
