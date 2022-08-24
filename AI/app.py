@@ -52,28 +52,28 @@ with st.sidebar:
         st.image(image)
         
         if st.button('Ok'):
-            imag_url = st.text_input('Add the File directory', source)
+            imag_url = st.text_input('Add the File directory', source, key=14)
         else: imag_url=None
     elif a == 'Sample Image 2':
         image = Image.open(source1)
         st.image(image)
         
         if st.button('Ok'):
-            imag_url = st.text_input('Add the File directory', source1)
+            imag_url = st.text_input('Add the File directory', source1, key=13)
         else: imag_url=None
     elif a == 'Sample Image 3':
         image = Image.open(source2)
         st.image(image)
         
         if st.button('Ok'):
-            imag_url = st.text_input('Add the File directory', source2)
+            imag_url = st.text_input('Add the File directory', source2, key=12)
         else: imag_url=None
     elif a == 'Sample Image 4':
         image = Image.open(source3)
         st.image(image)
         
         if st.button('Ok'):
-            imag_url = st.text_input('Add the File directory', source3)
+            imag_url = st.text_input('Add the File directory', source3, key=11)
         else: imag_url=None
 
     #Video
