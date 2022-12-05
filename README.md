@@ -1,56 +1,59 @@
 # SEA-X - Detection and Analysis of Plastic Waste
 
 
-### Future proposal
+### Future projection
 
-Reduce the amount of plastic wastes in the ocean
+Collaborate with local NGOs to reduce the amount of plastic wastes in water bodies.
 
 ### Proposed Solution
 
-A platform that combines Drones, AI and GIS technology, to identify and analyze plastic waste on water bodies
+An analytical platform that recieves video feed from Drones to identify and analyze plastic waste on water bodies. 
 
 ### How does it work?
 
-Leveraging a cutomoised Yolov5 model to predict plastics found on the water surface
+Leverages a pretrained Yolov5 model to predict plastics found on the water surface
 
 https://user-images.githubusercontent.com/54020973/177602282-13057edf-2b06-420c-b135-9e8589390aa0.mp4
 
 ### Website to test the app
 
-It was built with power apps and deployed with Streamlit
+It was built with Power apps and Streamlit
 https://seax.powerappsportals.com/
 
 ### Data Collection
 
-Gathered data from a nearby river using drones and plastic bottles.
+For training: Dataset from Japan: https://zenodo.org/record/4552389
+
+For testing: Gathered data from a nearby river using drones and plastic bottles.
 
 ### Data Annotation
 
-LabelImg was used to annotate the images
+LabelImg was used to annotate the images. 
 
-### Model Architecture
+### Yolov5 Model Architecture
+
+![h-consists-of-three-parts-i-backbone](https://user-images.githubusercontent.com/54020973/205670159-361743ef-8bf5-4cc6-98aa-b4a36b019c91.jpg)
 
 ### AIM of research poster
 
-To propose an efficient way to detect and analyse different plastic types
+![Olubunmi Akinremi PosterA](https://user-images.githubusercontent.com/54020973/205675724-3a8d2d85-87a6-4564-87e7-6ae954b78f40.png)
 
-***compare the results from a Yolov5 and Effi-UNet model by applying both to detection and analysis of plastic waste.
+
+To propose an efficient way to detect and analyse different plastic types
 
 The paper is divided into two parts
 - Detection part
 - Analysis part
 
-### Paper Improvements
+### Paper Improvement Areas
+
+- Allow for the use of video input
 
 
-
-#### Benchmark results: 
+#### Evaluation Results: 
 Will be added soon
 
-### YOLOv5 Approach
-
-Will be updated soon
-
+## Earlier 
 ### UNet Approach
 
 To acheive the same results from Yolov5 by leveraging a UNet CNN architecture. This research uses the same dataset, preprocessing method but with a UNet model and a extra layer. The results are a displayed differently in that using semantic segmentation to show the mapped areas and a collective accuracy rather than individual predictions.
