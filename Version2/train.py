@@ -10,8 +10,8 @@ results = model.train(data='data/coco128.yaml', epochs=3)
 # Evaluate the model's performance on the validation set
 results = model.val()
 
-# # Perform object detection on an image using the model
-# results = model('https://ultralytics.com/images/bus.jpg')
+# Perform object detection on an image using the model
+results = model('datasets/coco128/images/test/dji_export_1655129128508.jpg')
 
-# # Export the model to ONNX format
-# success = model.export(format='onnx')
+# Export the model to ONNX format
+success = model.export()
