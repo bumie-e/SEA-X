@@ -8,5 +8,4 @@ requests
 tqdm
 streamlit
 streamlit-chat
-bytetracker
 streamlit_extras
