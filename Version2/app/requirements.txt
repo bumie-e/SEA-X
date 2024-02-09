@@ -1,0 +1,12 @@
+ultralytics
+numpy
+opencv-python-headless
+pandas
+Pillow
+pyYAML
+requests
+tqdm
+streamlit
+streamlit-chat
+bytetracker
+streamlit_extras
