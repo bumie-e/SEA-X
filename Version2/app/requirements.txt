@@ -5,7 +5,7 @@ Pillow
 pyYAML
 requests
 tqdm
-opencv-python-headless
+opencv-python-headless==4.8.1.78
 streamlit
 streamlit-chat
 streamlit_extras
