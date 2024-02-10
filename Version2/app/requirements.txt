@@ -9,5 +9,5 @@ pyYAML
 requests
 tqdm
 streamlit
-opencv-python-headless==4.8.1.78
+
 openai==0.28.1
