@@ -1,6 +1,7 @@
 ultralytics
 python-decouple
 numpy
+torch
 pandas
 Pillow
 pyYAML
