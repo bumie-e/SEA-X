@@ -81,12 +81,12 @@ except Exception as ex:
 
 def explainAI():
     
-    openai.api_key = config("APIKEY")
-    openai.api_base = config("ENDPOINT") # your endpoint should look like the following https://YOUR_RESOURCE_NAME.openai.azure.com/
+    openai.api_key =st.secrets['APIKEY'] #config("APIKEY")
+    openai.api_base = st.secrets["ENDPOINT"]#config("ENDPOINT") # your endpoint should look like the following https://YOUR_RESOURCE_NAME.openai.azure.com/
     openai.api_type = 'azure'
     openai.api_version = '2023-05-15' # this might change in the future
 
-    deployment_name=config("DEPLOYMENTNAME") #This will correspond to the custom name you chose for your deployment when you deployed a model. 
+    deployment_name=st.secrets["DEPLOYMENTNAME"]#config("DEPLOYMENTNAME") #This will correspond to the custom name you chose for your deployment when you deployed a model. 
 
     res = model(uploaded_image)
     #print(res[0].tojson())
