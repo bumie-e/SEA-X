@@ -4,6 +4,9 @@ import streamlit as st
 import PIL
 from ultralytics import YOLO
 from PIL import Image
+import os
+import openai
+from decouple import config
 
 # Setting page layout
 st.set_page_config(
@@ -76,21 +79,47 @@ except Exception as ex:
         f"Unable to load model. Check the specified path: {model_path}")
     st.error(ex)
 
+def explainAI():
+    
+    openai.api_key = config("APIKEY")
+    openai.api_base = config("ENDPOINT") # your endpoint should look like the following https://YOUR_RESOURCE_NAME.openai.azure.com/
+    openai.api_type = 'azure'
+    openai.api_version = '2023-05-15' # this might change in the future
+
+    deployment_name=config("DEPLOYMENTNAME") #This will correspond to the custom name you chose for your deployment when you deployed a model. 
+
+    res = model(uploaded_image)
+    #print(res[0].tojson())
+    prompt = f"You have been handed over the results of a computer vision model built by the data science team and you have been asked to present the results to the board. Explain only 'name' and 'confidence'. Here is the data{res[0].tojson()}"
+    
+    
+    # Send a completion call to generate an answer
+    print('Sending a test completion job')
+    response = openai.Completion.create(engine=deployment_name, prompt=prompt, max_tokens=70)
+    text = response['choices'][0]['text'].replace('\n', '').replace(' .', '.').strip()
+    st.write('AI Analysis of the Results')
+    st.write(text)
+    print(text)
+
 if st.sidebar.button('Detect Objects'):
     res = model.predict(uploaded_image,
                         conf=confidence
                         )
     speed = res[0].speed
     res_plotted = res[0].plot()[:, :, ::-1]
-    print(res)
+    #print(res)
     with col2:
         st.image(res_plotted,
                  caption='Detected Image',
                  use_column_width=True
                  )
+        explainAI()
         try:
             with st.expander("Detection Results"):
                 for spe in speed:
                     st.write(spe, round(speed[spe], 2))
         except Exception as ex:
             st.write("No image is uploaded yet!")
+
+
+
