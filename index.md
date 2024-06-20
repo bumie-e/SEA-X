@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sea-X Dashboard</title>
+    <title>Sea-X Home</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,8 +11,8 @@
         <h1>Sea-X</h1>
         <nav>
             <ul>
-                <li>Home</li>
-                <li>Dashboard</li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
                 <li>Reports</li>
                 <li>Profile</li>
                 <li>Help</li>

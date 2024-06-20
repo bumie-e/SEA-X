@@ -9,9 +9,6 @@ body {
     background-color: #f0f0f0;
     padding: 20px;
     box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
 .sidebar h1 {
@@ -26,6 +23,11 @@ body {
 
 .sidebar nav ul li {
     margin: 15px 0;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: inherit;
 }
 
 .main-content {
@@ -109,5 +111,34 @@ table th, table td {
 }
 
 table th {
+    background-color: #f2f2f2;
+}
+
+.upload-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    background-color: #f0f0f0;
+    border: 2px dashed #ccc;
+    margin-bottom: 20px;
+}
+
+.upload-box {
+    text-align: center;
+}
+
+.recent-uploads table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.recent-uploads table th, .recent-uploads table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.recent-uploads table th {
     background-color: #f2f2f2;
 }
